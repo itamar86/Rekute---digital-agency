@@ -1,31 +1,558 @@
-/*////////////////////////
-    Table of Contents
-    1. Global Styles
-    2. Typography
-    3. Layout
-        3.1 Reusables
-        3.2 Other
-    4. Areas
-        4.1 Header
-        4.2 Introduction
-        etc.
-    5. Media Queries
-////////////////////////*/
-
 /* ------------------------------- 1. Global Styles -------------------------------- */
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*border: 2px solid lightgreen;*/
+}
+:root {
+    --purple: #5722CD;
+    --blue: #4845E4;
+    --pink: #ED4385;
+    --black: #0C0C0C;
+    --light-grey: #F3F6F9;
+    --grey: #7A7A7A;
+}
 /* ------------------------------- 2. Typography ----------------------------------- */
+body p, ul, li, a {
+    font-family: 'Roboto', "Droid Sans", sans-serif;
+}
+body h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Droid Serif, serif;
+}
+/* --------------- Header ----------------------- */
+body {
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    /*border : 5px dashed red;*/
+    background-image: url("assets/noise-texture.png");
+    background-size: contain;
+    background: #4845E4;
+    background: url("assets/noise-texture.png"), linear-gradient(90deg, rgba(72, 69, 228, 1) 71%, rgba(87, 34, 205, 1) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 0 88%);
+}
+.navbar {
+    /*border: 3px dashed red;*/
+    display: flex;
+    width: 100%;
+    padding-right:4.5em;
+    padding-top:1em;
+    padding-bottom: 5em;
+    justify-content: flex-end;
+}
+.navbar ul {
+    /*border: 2px dashed yellow;*/
+    margin: 0.5em;
+    padding: 0.5em;
+    display: flex;
+    gap: 1vmin 5vmax;
+}
+.navbar ul li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    text-decoration: none;
+    float: left;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+}
+.header-text  {
+    width: 100%;
+    min-height: 50%;
+    max-height: 75%;
+    padding-right: 20%;
+    padding-left: 20%;
+    /*border: 3px dashed green;*/
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 5%
+}
+.header-text h1 {
+    /*margin-top: 5%;*/
+    text-align: center;
+    font-size: 3.5em;
+}
+header p {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 1.5em;
+    padding-bottom: 4em;
+}
+#header-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#wave-pict {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    gap: 1vh;
+    margin: 10px;
+    min-height: 5vh;
+    max-height: 10vh;
+}
+/* --------------- Section: Hello ----------------------- */
+.background-text-hello {
+    /*border: 3px dashed blue;*/
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    font-size: 28em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--blue);
+    opacity: 5%;
+    overflow: hidden;
+    letter-spacing: -20px;
+}
+.hello {
+    /*border: 3px solid red;*/
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10em;
+}
+.hello-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.hello-text h2 {
+    position: relative;
+    z-index: 2;
+    color: var(--blue);
+    text-align: center;
+    margin-top: 8rem;
+    font-size: 2.3em;
+}
+.main-text{
+    margin-bottom: 25px;
+}
+.hello-text p {
+    margin-top: 35px;
+    text-align: center;
+}
+/* --------------- Section: Projects ----------------------- */
+.projects {
+    /*border: 3px dotted green;*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    background: var(--light-grey);
+    background-color: #f0f2f5;
+    clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0 100%);
+}
+.background-text-work   {
+    /*display: flex;*/
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    font-size: 26em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    opacity: 60%;
+    letter-spacing: -20px;
+}
+/* --------------- Section: Projects ----------------------- */
 
-/* ------------------------------- 3. Layout --------------------------------------- */
-
-/* --------------- 3.1 Reusables ----------------------- */
-
-/* --------------- 3.2 Other --------------------------- */
-
-/* ------------------------------- 4. Areas ---------------------------------------- */
-
-/* --------------- 4.1 Header ------------------------- */
-
-/* --------------- 4.2 Introduction ------------------- */
-
+.project-wrapper {
+    position: relative;
+    z-index: 2;
+    /*border: 3px dashed red;*/
+    display: flex;
+    margin-top: 20rem;
+    justify-content: center;
+    gap: 8rem;
+    flex-flow: row-reverse wrap;
+    width: 100%;
+}
+.project-wrapper-var {
+    /*border: 3px dashed red;*/
+    display: flex;
+    margin-top: 5rem;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10rem;
+    width: 100%;
+}
+.project-wrapper-worth {
+    /*border: 3px dashed red;*/
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+    gap: 8rem;
+    flex-flow: row-reverse wrap;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.project-img  {
+    /*border: 3px dashed blue;*/
+    display: flex;
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 2;
+}
+.project-img img {
+    width: 80%;
+    box-shadow: #0c0c0c4d -3px 22px 20px 0;
+}
+.project-txt {
+    /*border: 3px dashed green;*/
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+.project-txt img {
+    /*border: 3px dashed yellow;*/
+    width: 15%;
+    margin-top: 1em;
+    margin-bottom: 4em;
+}
+.project-txt p {
+    /*border: 3px dashed blue;*/
+    display: flex;
+    width: 20rem;
+}
+.view-btn-line {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 50px;
+}
+.project-btn  {
+    font-family: Roboto, "Droid Sans", sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px ;
+    color: var(--blue);
+    border-shape: none;
+    border-color: transparent;
+    text-decoration: none;
+ }
+.line {
+    width: 20px;
+    height: 1px;
+    background-color: #3b3bdb;
+}
+#connecting-bg {
+    /*border: 3px dashed red;*/
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    flex-direction: column;
+    width: 100%;
+    height: 10em;
+    background-color: #f0f2f5;
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 0 50%);
+}
+ /* --------------- 3.1 Re-usables ----------------------- */
+.btn {
+    display: flex;
+    background-color: #ED4385;
+    border: none;
+    text-transform: uppercase;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-family: Roboto light, sans-serif;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 25px 40px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px #00000057;
+}
+/* --------------- Section: Services ----------------------- */
+.services {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+.background-text-services {
+    /*border: 3px dashed blue;*/
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    font-size: 20em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--blue);
+    opacity: 5%;
+    letter-spacing:-20px;
+    overflow: hidden;
+}
+.wrapper-services {
+    /*border: 3px solid grey;*/
+    margin-top: 25rem;
+    align-content: center;
+    display: flex;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    flex-flow: row wrap;
+    width: 100%;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10em;
+}
+.services-item {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    color: var(--blue);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    width: 380px;
+    height: 380px;
+    padding: 20px 40px 0 40px;
+    border: 1px solid blue;
+    background-color: white;
+    box-shadow: 0 4px 12px #00000057;
+}
+.services-item p {
+    /*border: 2px solid red;*/
+    color: black;
+    margin-top: 0.8rem;
+    width: 100%;
+    height: auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+}
+.services-item img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1rem ;
+}
+/* --------------- Section: contact ----------------------- */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    height: auto;
+    background: url("assets/noise-texture.png"), linear-gradient(90deg, rgba(72, 69, 228, 1) 71%, rgba(87, 34, 205, 1) 100%);
+    clip-path: polygon(0 0%, 100% 4%, 100% 100%, 0 100%);
+}
+.contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+.contact p {
+    font-weight: 300;
+}
+.form-wrapper {
+    width: 40em;
+    margin-top: 3em;
+    padding: 60px 20px;
+    text-align: center;
+}
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 16px;
+}
+.subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+.field {
+    text-align: left;
+    margin-bottom: 24px;
+}
+label {
+    display: block;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+input,
+textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background: white;
+    border: none;
+    /*border-radius: 8px;*/
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}
+input:focus,
+textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+/* Placeholder text colour */
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+textarea {
+    height: 200px;
+    width: 100%;
+}
+.btn-send {
+    margin-top: 16px;
+    padding: 18px 80px;
+    background: linear-gradient(135deg, #ff6b8a, #ff4d6d);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(255, 77, 109, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(255, 77, 109, 0.55);
+}
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    background-color: #0C0C0C;
+    color: white;
+}
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+/* Small Smartphones (Portrait) */
+@media (min-width: 320px) and (max-width: 767px) {
+    .navbar {
+        padding-top: 1em;
+        padding-bottom: 2em;
+        justify-content: center;
+        padding-right: 0;
+    }
+    .navbar a {
+        font-weight: bolder;
+    }
+    header p {
+        font-weight: 200;
+        font-size: 1.2rem;
+        padding-bottom: 2em;
+    }
+    .header-text {
+        padding: 0;
+    }
+    #header-btn {
+        padding-bottom: 0;
+    }
+    #wave-pict {
+        padding-top: 20px;
+        margin:0;
+    }
+    .header-text h1 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 15px 23px 15px;
+        font-size: 10px;
+    }
+    .background-text-hello {
+        font-size: 14em;
+        padding-bottom: 0.5em;
+        height: 2.3em;
+
+    }
+    .hello-text h2 {
+        margin-top: 7rem;
+        font-size: 1.4rem;
+    }
+    .hello-text {
+        width: 80%;
+    }
+    .hello-text p {
+        margin-top: 2em;
+    }
+    .background-text-work {
+        font-size: 12em;
+        padding-top: 0.4em;
+    }
+    .project-wrapper {
+        margin-top: 14rem;
+        gap:2rem;
+    }
+    .project-img{
+        justify-content: center;
+    }
+    .project-txt img {
+        margin-bottom: 3em;
+    }
+    .project-wrapper-var {
+        margin-top: 3rem;
+        gap: 3rem;
+    }
+    .project-wrapper-worth {
+        margin-top: 3rem;
+        gap: 3rem;
+        margin-bottom: 0;
+    }
+    .background-text-services {
+        font-size: 9em;
+        letter-spacing: -15px;
+    }
+    .wrapper-services {
+        margin-top: 16rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 8em;
+    }
+    .form-wrapper {
+        width: auto;
+    }
+    .form-wrapper h1 {
+        font-size: 2.3rem;
+    }
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
